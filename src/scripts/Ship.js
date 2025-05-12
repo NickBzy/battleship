@@ -21,10 +21,6 @@ class Ship {
   getHits() {
     return this.hits
   }
-
-  getSunk() {
-    return this.sunk
-  }
 }
 
 export { Ship }

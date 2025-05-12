@@ -1,0 +1,70 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  gap: 140px;
+  padding: 20px;
+}
+
+@media (max-width: 960px) {
+  .game {
+    gap: 60px;
+  }
+}
+
+.game h1 {
+  font-size: clamp(7rem, 12vw, 10rem);
+  background: linear-gradient(
+    135deg,
+    #d4d4d4,
+    #f0f0f0,
+    #a1a1a1,
+    #d4d4d4,
+    #ffffff,
+    #707070
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 10s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.boards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  font-size: clamp(2rem, 2vw, 4rem);
+}
+
+.enemy-board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 440px;
+  height: 440px;
+  gap: 2px;
+}
+
+.enemy-cell {
+  background-color: rgb(41, 57, 71);
+}
+
+.has-ship {
+  background-color: white;
+}
+
+.hit {
+  background-color: red !important;
+}
+.miss {
+  background-color: lightgray;
+}
