@@ -174,14 +174,15 @@ function placeEnemyBoard() {
       const dir = Math.random() < 0.5 ? "x" : "y"
       const ship = new Ship(length)
       if (cpuBoard.placeShip(ship, x, y, dir)) {
-        for (let i = 0; i < length; i++) {
-          const cellSelector =
-            dir === "x"
-              ? `[data-x="${x + i}"][data-y="${y}"]`
-              : `[data-x="${x}"][data-y="${y + i}"]`
-          const cell = cpuDomBoard.querySelector(cellSelector)
-          cell?.classList.add("has-ship")
-        }
+        // FOR TESTING - Display ships placement on board
+        // for (let i = 0; i < length; i++) {
+        //   const cellSelector =
+        //     dir === "x"
+        //       ? `[data-x="${x + i}"][data-y="${y}"]`
+        //       : `[data-x="${x}"][data-y="${y + i}"]`
+        //   const cell = cpuDomBoard.querySelector(cellSelector)
+        //   cell?.classList.add("has-ship")
+        // }
         placed = true
       }
     }
@@ -198,22 +199,19 @@ function startGame(player, enemy, playerBoard, enemyBoard) {
       const x = parseInt(cell.dataset.x)
       const y = parseInt(cell.dataset.y)
 
-      // Prevent clicking same cell again
       if (cell.classList.contains("hit") || cell.classList.contains("miss"))
         return
 
       const result = enemyBoard.receiveAttack(x, y)
       cell.classList.add(result ? "hit" : "miss")
 
-      // Check if enemy has any ships left
       if (!enemyBoard.stillHasShips()) {
         alert("You win!")
         return
       }
 
-      // Enemy's turn
       setTimeout(() => {
-        const move = player.availableMoves[player.availableMoves.length - 1] // Peek
+        const move = player.availableMoves[player.availableMoves.length - 1]
         const [x, y] = move
         const attackResult = player.randomAttack(playerBoard)
 
