@@ -1,50 +1,46 @@
-# Webpack + ESLint + Prettier Starter Template
+# 🔫 Battleship Game
 
-A minimal and opinionated boilerplate for modern JavaScript development using Webpack, ESLint (Standard config), and Prettier.
+A browser-based implementation of the classic **Battleship** game built using **JavaScript**, **HTML**, and **CSS**. Test your strategic thinking by placing ships and trying to sink the opponent’s fleet before yours is destroyed!
 
 ## 🚀 Features
 
-- ⚙️ Webpack 5 setup with `webpack-dev-server`
-- 🧹 ESLint with [Standard JS](https://standardjs.com/) config
-- 💅 Prettier for consistent code formatting
-- 📦 HTML/CSS support via `html-loader`, `style-loader`, and `css-loader`
-- 🚀 Easy deploy to GitHub Pages with `git subtree`
+- Turn-based player vs. computer gameplay
+- Interactive ship placement with axis selection (X or Y)
+- Visual hit/miss feedback
+- Randomized CPU ship placement
+- Simple, responsive UI using CSS Grid
+- Hover preview for ship placement
 
----
+## 🧠 Technologies Used
 
-## 📦 Getting Started
+- Vanilla JavaScript (ES6+)
+- HTML5
+- CSS3 (with Grid and Clamp for responsiveness)
+- Jest for unit testing
 
-### 1. Install Dependencies
+## 📦 Setup & Installation
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NickBzy/battleship.git
+   cd battleship
+
+2. Install Dependencies
 ```bash
 npm install
 ```
-
-### 2. Start Development Server
-
+3. Run the Development Server
 ```bash
 npm run dev
 ```
+4. Open a Webpage in http://localhost:8080/
 
-### 3. Build for Production
-
+## 🧪 Run Tests
+Make sure jest is installed (via npm install) and run:
 ```bash
-npm run build
+npm test
 ```
 
-### 4. Deploy to Github Pages
-
-```bash
-npm run deploy
-```
-
-### Linting & Formatting
-- Run ESLint manually:
-  ```bash
-  npx eslint src
-  ```
-- Prettier auto-formats on save (if you have the VSCode extension installed).
-
-- Customize formatting via .prettierrc.
-
-
+## 🎯 TODOs
+- Add sound effect on hit and miss
+- Display game over screen with winner announcement
