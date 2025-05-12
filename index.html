@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <video autoplay muted loop playnsinline id="bg-video">
+      <source src="39718dd524e0d6ba0912.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="homepage">
+      <h1>BATTLESHIP</h1>
+      <div class="name-input">
+        <form action="">
+          <h3>Please enter your name:</h3>
+          <input type="text" required maxlength="15" />
+          <p class="error-msg"></p>
+          <button class="go">GO</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="place-ships-modal">
+      <div class="place-msg">
+        <span id="name">Name</span>
+        <span>, please place your ships</span>
+        <span id="number">0</span>
+        <span>/5</span>
+      </div>
+      <div class="place-direction">
+        <label for="direction">Direction:</label>
+        <select name="direction" id="direction">
+          <option value="x">X-axis</option>
+          <option value="y">Y-axis</option>
+        </select>
+      </div>
+      <div class="place-board"></div>
+    </div>
+
+    <div class="game hidden">
+      <h1>BATTLESHIP</h1>
+      <div class="boards">
+        <div class="player" id="">
+          <div class="name-player">
+            <span id="name-player"></span>
+            <span>'s board:</span>
+          </div>
+        </div>
+        <div class="cpu" id="">
+          <span>Enemy's board:</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
